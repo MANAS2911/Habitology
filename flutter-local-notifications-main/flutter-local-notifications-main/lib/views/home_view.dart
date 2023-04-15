@@ -23,15 +23,6 @@ class _HomePageState extends State<HomePage> {
       builder: (context, model, _) =>
           Column(mainAxisAlignment: MainAxisAlignment.center, children: [
         ElevatedButton(
-            onPressed: () => model.instantNofitication(),
-            child: Text('Instant Notification')),
-        ElevatedButton(
-            onPressed: () => model.imageNotification(),
-            child: Text('Image Notification')),
-        ElevatedButton(
-            onPressed: () => model.stylishNotification(),
-            child: Text('Media Notification')),
-        ElevatedButton(
             onPressed: () => model.sheduledNotification(),
             child: Text('Scheduled Notification')),
         ElevatedButton(

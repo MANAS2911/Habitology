@@ -24,52 +24,12 @@ class NotificationService extends ChangeNotifier {
   }
 
   //Instant Notifications
-  Future instantNofitication() async {
-    var android = AndroidNotificationDetails("id", "channel", "description");
-
-    var platform = new NotificationDetails(android: android);
-
-    await _flutterLocalNotificationsPlugin.show(
-        0, "", "Tap to do something", platform,
-        payload: "Welcome to demo app");
-  }
+  
 
   //Image notification
-  Future imageNotification() async {
-    var bigPicture = BigPictureStyleInformation(
-        DrawableResourceAndroidBitmap("ic_launcher"),
-        largeIcon: DrawableResourceAndroidBitmap("ic_launcher"),
-        contentTitle: "Demo image notification",
-        summaryText: "This is some text",
-        htmlFormatContent: true,
-        htmlFormatContentTitle: true);
-
-    var android = AndroidNotificationDetails("id", "channel", "description",
-        styleInformation: bigPicture);
-
-    var platform = new NotificationDetails(android: android);
-
-    await _flutterLocalNotificationsPlugin.show(
-        0, "Demo Image notification", "Tap to do something", platform,
-        payload: "Welcome to demo app");
-  }
-
+ 
   //Stylish Notification
-  Future stylishNotification() async {
-    var android = AndroidNotificationDetails("id", "channel", "description",
-        color: Colors.deepOrange,
-        enableLights: true,
-        enableVibration: true,
-        largeIcon: DrawableResourceAndroidBitmap("ic_launcher"),
-        styleInformation: MediaStyleInformation(
-            htmlFormatContent: true, htmlFormatTitle: true));
-
-    var platform = new NotificationDetails(android: android);
-
-    await _flutterLocalNotificationsPlugin.show(
-        0, "Demo Stylish notification", "Tap to do something", platform);
-  }
-
+ 
   //Sheduled Notification
 
   Future sheduledNotification() async {
@@ -77,8 +37,8 @@ class NotificationService extends ChangeNotifier {
     var bigPicture = BigPictureStyleInformation(
         DrawableResourceAndroidBitmap("ic_launcher"),
         largeIcon: DrawableResourceAndroidBitmap("ic_launcher"),
-        contentTitle: "Your study is scheduled",
-        summaryText: "For 17:00 hours.",
+        contentTitle: "Hurry Up!!",
+        summaryText: "Complete all your pending tasks.",
         htmlFormatContent: true,
         htmlFormatContentTitle: true);
 
@@ -88,11 +48,7 @@ class NotificationService extends ChangeNotifier {
     var platform = new NotificationDetails(android: android);
 
     await _flutterLocalNotificationsPlugin.periodicallyShow(
-        0,
-        "Demo Sheduled notification",
-        "Tap to do something",
-        interval,
-        platform);
+        0, "You are almost there", "Keep it up!!", interval, platform);
   }
 
   //Cancel notification
